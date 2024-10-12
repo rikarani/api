@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\CheckController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::prefix('/cek-ign')->group(function () {
+    Route::get('/mlbb', [CheckController::class, 'mlbb']);
+});
