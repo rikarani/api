@@ -1,4 +1,4 @@
-name: Fix Code Style
+name: Linting
 on:
   push:
     branches:
@@ -7,6 +7,7 @@ jobs:
   lint:
     name: Fix Code Style
     runs-on: ubuntu-latest
+    environment: Production
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -28,3 +29,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5.0.1
         with:
           commit_message: "Fixes coding style"
+          commit_user_name: Github Actions
+          commit_user_email: actions@github.com
