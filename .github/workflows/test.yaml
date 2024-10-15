@@ -1,0 +1,28 @@
+name: Run Test
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    types:
+      - synchronize
+jobs:
+  test:
+    name: Test with Pest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@2.31.1
+        with:
+          php-version: "8.3"
+          extensions: json, dom, curl, libxml, mbstring
+          coverage: none
+
+      - name: Install laravel
+        run: composer install
+
+      - name: Run Pest
+        run: php artisan test --ci
