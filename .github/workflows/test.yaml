@@ -4,9 +4,6 @@ on:
     type:
       - opened
       - synchronize
-  pull_request_target:
-    branches:
-      - main
 jobs:
   test:
     name: Test with Pest
