@@ -8,7 +8,6 @@ jobs:
     name: Deploy to Production
     runs-on: ubuntu-latest
     environment: Production
-    needs: lint
     steps:
       - name: Executing SSH Commands
         uses: appleboy/ssh-action@v1.1.0
