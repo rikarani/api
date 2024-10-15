@@ -1,3 +1,4 @@
 # TODO
 
-1. Write Test
+1. Nulis OpenAPI Spec
+2. Bikin Docs + Playground pakek Scalar
