@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - dev
-  pull_request:
-    types:
-      - synchronize
 jobs:
   test:
     name: Test with Pest
