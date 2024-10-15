@@ -1,8 +1,12 @@
 name: Run Test
 on:
-  push:
+  pull_request:
+    type:
+      - opened
+      - synchronize
+  pull_request_target:
     branches:
-      - dev
+      - main
 jobs:
   test:
     name: Test with Pest
