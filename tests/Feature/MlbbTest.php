@@ -97,7 +97,7 @@ describe("Validation", function () {
 
         $response->assertStatus(400)->assertJson(function (AssertableJson $json) {
             $json->hasAll(["success", "code"])->has("errors", 2, function (AssertableJson $json) {
-                $json->hasAll(["name", "message"]);
+                $json->hasAll(["path", "message"]);
             });
         });
     });

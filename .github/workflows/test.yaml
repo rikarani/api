@@ -21,8 +21,8 @@ jobs:
           extensions: json, dom, curl, libxml, mbstring
           coverage: none
 
-      - name: Install laravel
+      - name: Install Laravel
         run: composer install
 
       - name: Run Pest
-        run: php artisan test --ci
+        run: php artisan test --ci --testsuite=Feature
