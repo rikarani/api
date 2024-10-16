@@ -24,6 +24,21 @@ class Codashop implements Game
         return $response;
     }
 
+    public function genshin(string $uid, ?string $server)
+    {
+        $response = $this->hit($this->url, [
+            'voucherPricePoint.id' => '116054',
+            'voucherPricePoint.price' => '16500',
+            'voucherPricePoint.variablePrice' => '0',
+            'user.userId' => $uid,
+            'user.zoneId' => $server,
+            'voucherTypeName' => 'GENSHIN_IMPACT',
+            'shopLang' => 'id_ID',
+        ]);
+
+        return $response;
+    }
+
     private function hit(string $url, array $data)
     {
         return Http::asForm()->withHeaders([
